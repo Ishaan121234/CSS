@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1 id="myH"></h1>
-    <p id="myP"></p>
+    <button onclick="myfunction(5)">Execute Js Function</button>
 
     <script>
-        document.getElementById("myH").innerHTML= "Ishaan"
-        document.getElementById("myP").innerHTML= "Ishaan lives in Thailand" 
+        function myfunction(x,y)
+
+        {
+            if (y===undefined) {
+                y=2;
+            }
+            document.write(x*y);
+        }
     </script>
-    
     
 </body>
 </html>

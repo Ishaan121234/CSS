@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-
-    <h1>JavaScript Variables</h1>
-    <p>Sum Of The 2 Numbers</p>
-    <p id="result"></p>
-
-    <script>
-       var num1 =5;
-       var num2 =6;
-       var sum= num1  +  num2;
-       document.getElementById("result").innerHTML= 
-       "The Total sum is: " + sum;
-    </script>
-
-    </body>
-
-    </html>
+<p>Fuction can access variable</p>
+<button type="button" onclick="myfunction()">Click Me!</button>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+    var b= 6;
+    function myfunction() {
+        var a= 4;
+        document.getElementById("demo").innerHTML= b * a;
+    
+    document.getElementById("demo1").innerHTML= a;
+    document.getElementById("demo2").innerHTML= b;
+    }
+    
+</script>
+</body>
+</html>
