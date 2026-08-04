@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Zoo</title>
+    <title>Document</title>
 
     <style>
         body {
@@ -21,143 +21,140 @@
 
         h1 {
 
-            color: brown;
-
-        }
-
-        #zoo {
-
-            border: 2px solid purple;
-
-            width: 300px;
-
-            margin: 16px auto;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            background: white;
-
-        }
-
-        .zone {
-
-            border: 1px solid yellowgreen;
-
-            margin: 6px 0;
-
-            padding: 8px 12px;
-
-            border-radius: 6px;
-
-            text-align: left;
+            color: rgb(128, 83, 0);
 
         }
 
         button {
 
-            background: green;
+            background: yellowgreen;
 
             color: white;
 
-            padding: 10px 24px;
+            padding: 10px 25px;
 
             border: none;
 
             border-radius: 20px;
 
             cursor: pointer;
-
-            
 
         }
 
-         button {
+        div {
 
-            background: red;
+            border: 1px solid green;
 
-            color: white;
+            width: 280px;
 
-            padding: 10px 24px;
+            margin: 6px auto;
 
-            border: none;
+            padding: 8px 12px;
 
-            border-radius: 20px;
+            text-align: left;
 
-            cursor: pointer;
-
-            
+            border-radius: 6px;
 
         }
     </style>
-
 </head>
 
 <body>
-    <h1>My Zoo </h1>
 
-    <p>Use JavaScript and the DOM to add animals to each cage!</p>
+    <h1>My Game Profile</h1>
 
-    <div id="zoo">
+    <button onclick="showProfile()">Show Profile</button>
 
-        <div class="zone">Zone 1: <span id="zone1"></span></div>
+    <div>Name: <span id="name"></span></div>
 
-        <div class="zone">Zone 2: <span id="zone2"></span></div>
+    <div>Score: <span id="score"></span></div>
 
-        <div class="zone">Zone 3: <span id="zone3"></span></div>
+    <div>Top Score: <span id="record"></span></div>
 
-        <div class="zone">Zone 4: <span id="zone4"></span></div>
+    <div>Rank: <span id="rank"></span></div>
 
-        <div class="zone">Zone 5: <span id="zone5"></span></div>
+    <div>Greeting: <span id="greeting"></span></div>
 
-        <div class="zone">Zone 6: <span id="zone6"></span></div>
+    <div>Stars: <span id="stars"></span></div>
 
-        <div class="zone">Total Animals: <span id="total"></span></div>
+    <div>Bonus Level: <span id="bonus"></span></div>
 
-    </div>
+    <div>Team Name: <span id="team"></span></div>
 
-    <br>
+    <div>Country Name: <span id="country"></span></div>
 
-    <button onclick="openZoo()">Open the Zoo!</button>
-    <button onclick="openZoo1()">Beware of the Animals</button>
-
-    <p id="zoo-status"></p>
-    <p id="zoo-status1"></p>
-
+    <div>Olympics win/lose: <span id="olympics"></span></div>
 
     <script>
+        function showProfile() {
+            let name = "Ishaan";
+            let country = "India";
+            let myScore = 75;
+            let highScore = 100;
+            let bonus = null;
+            let team;
 
-        function openZoo() {
-            document.getElementById("zone1").innerHTML = "Lion";
+            let isTopScore = myScore == highScore;
 
-            document.getElementById("zone2").innerHTML = "Elephant";
+            let rank;
+            if (myScore >= 80) {
+                rank = "Gold";
+            } else if (myScore >= 50) {
+                rank = "Silver";
+            } else {
+                rank = "Bronze";
+            }
+            document.getElementById("rank").innerHTML = rank;
 
-            document.getElementById("zone3").innerHTML = "Penguin";
+            let olympics;
+            if (myScore >= 70) {
+                olympics = "Win";
+            } else {
+                olympics = "Lose";
+            }
+            document.getElementById("olympics").innerHTML = olympics;
 
-            document.getElementById("zone4").innerHTML = "Capybara";
+            let hour = new Date().getHours();
+            let greeting;
+            if (hour < 12) {
+                greeting = "Good Morning!*";
+            } else if (hour < 17) {
+                greeting = "Good Afternoon!*";
+            } else {
+                greeting = "Good Evening!*";
+            }
+            document.getElementById("greeting").innerHTML = greeting;
 
-            document.getElementById("zone5").innerHTML = "Tiger";
+            let stars = "";
+            let count = 0;
+            while (count < 5) {
+                stars = stars + "* ";
+                count = count + 1;
+            }
+            document.getElementById("stars").innerHTML = stars;
 
-            document.getElementById("zone6").innerHTML = "Horse";
 
-            document.getElementById("total").innerHTML = "6";
 
-            document.getElementById("zoo-status").innerHTML = document.title + " is now Open!!!";
+            document.getElementById("bonus").innerHTML = bonus;
 
-        
-            
+
+            document.getElementById("team").innerHTML = team;
+
+
+
+
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("score").innerHTML = myScore + " out of " + highScore;
+            document.getElementById("record").innerHTML = isTopScore;
+            document.getElementById("rank").innerHTML = rank;
+            document.getElementById("greeting").innerHTML = greeting;
+            document.getElementById("stars").innerHTML = stars;
+            document.getElementById("bonus").innerHTML = bonus;
+            document.getElementById("team").innerHTML = team;
+            document.getElementById("country").innerHTML = country;
+
         }
-
-        function openZoo1() {
-
-document.getElementById("zoo-status1").innerHTML = document.title+ " Beware of the Animals,it might bite u!!!";
-
-        }
-
     </script>
-
-
 </body>
 
 </html>
