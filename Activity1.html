@@ -4,157 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Planet Card</title>
+</head>
 
+<body>
     <style>
         body {
 
-            font-family: Arial, sans-serif;
+            font-family: Arial;
 
-            background: aliceblue;
-
-            text-align: center;
+            background: #f0f4ff;
 
             padding: 30px;
+
+            text-align: center;
 
         }
 
         h1 {
 
-            color: rgb(128, 83, 0);
+            color: #ff5a43;
+
+        }
+
+        p {
+
+            color: #555;
+
+        }
+
+        .cards {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 25px;
+
+        }
+
+        .card {
+
+            background: white;
+
+            border: 3px solid #ff5a43;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            width: 200px;
+
+        }
+
+        .planet-name {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #333;
+
+        }
+
+        .planet-fact {
+
+            color: #666;
+
+            margin-top: 10px;
+
+            font-size: 14px;
 
         }
 
         button {
 
-            background: yellowgreen;
+            background: #ff5a43;
 
             color: white;
 
-            padding: 10px 25px;
-
             border: none;
 
-            border-radius: 20px;
+            padding: 12px 28px;
+
+            border-radius: 8px;
 
             cursor: pointer;
 
-        }
+            font-size: 16px;
 
-        div {
-
-            border: 1px solid green;
-
-            width: 280px;
-
-            margin: 6px auto;
-
-            padding: 8px 12px;
-
-            text-align: left;
-
-            border-radius: 6px;
+            margin-top: 10px;
 
         }
     </style>
-</head>
 
-<body>
+    </head>
 
-    <h1>My Game Profile</h1>
+    <body>
 
-    <button onclick="showProfile()">Show Profile</button>
+        <h1>My Planet Cards</h1>
 
-    <div>Name: <span id="name"></span></div>
+        <p>Use a JavaScript class to build planet cards!</p>
 
-    <div>Score: <span id="score"></span></div>
+        <button onclick="showPlanets()">Show Planets!</button>
 
-    <div>Top Score: <span id="record"></span></div>
+        <div class="cards">
 
-    <div>Rank: <span id="rank"></span></div>
+            <div id="card1"></div>
 
-    <div>Greeting: <span id="greeting"></span></div>
+            <div id="card2"></div>
 
-    <div>Stars: <span id="stars"></span></div>
+            <div id="card3"></div>
 
-    <div>Bonus Level: <span id="bonus"></span></div>
+        </div>
 
-    <div>Team Name: <span id="team"></span></div>
+        <script>
+            class Planet {
+                constructor(name, fact, moon) {
+                    this.name = name;
+                    this.fact = fact;
+                    this.moon = moon;
+                }
 
-    <div>Country Name: <span id="country"></span></div>
-
-    <div>Olympics win/lose: <span id="olympics"></span></div>
-
-    <script>
-        function showProfile() {
-            let name = "Ishaan";
-            let country = "India";
-            let myScore = 75;
-            let highScore = 100;
-            let bonus = null;
-            let team;
-
-            let isTopScore = myScore == highScore;
-
-            let rank;
-            if (myScore >= 80) {
-                rank = "Gold";
-            } else if (myScore >= 50) {
-                rank = "Silver";
-            } else {
-                rank = "Bronze";
+                describe() {
+                    return this.name + ": " + this.fact + this.moon;
+                }
             }
-            document.getElementById("rank").innerHTML = rank;
 
-            let olympics;
-            if (myScore >= 70) {
-                olympics = "Win";
-            } else {
-                olympics = "Lose";
-            }
-            document.getElementById("olympics").innerHTML = olympics;
-
-            let hour = new Date().getHours();
-            let greeting;
-            if (hour < 12) {
-                greeting = "Good Morning!*";
-            } else if (hour < 17) {
-                greeting = "Good Afternoon!*";
-            } else {
-                greeting = "Good Evening!*";
-            }
-            document.getElementById("greeting").innerHTML = greeting;
-
-            let stars = "";
-            let count = 0;
-            while (count < 5) {
-                stars = stars + "* ";
-                count = count + 1;
-            }
-            document.getElementById("stars").innerHTML = stars;
-
-
-
-            document.getElementById("bonus").innerHTML = bonus;
-
-
-            document.getElementById("team").innerHTML = team;
+            function showPlanets() {
+                let p1 = new Planet("Earth", "The Only Planet with life","it has 1 Moon");
+                let p2 = new Planet("Mars", "Known as the Red Planet","it has 12 Moon");
+                let p3 = new Planet("Saturn", "Has Rings Made of Ice","it has 14 Moon");
+            
 
 
 
 
-            document.getElementById("name").innerHTML = name;
-            document.getElementById("score").innerHTML = myScore + " out of " + highScore;
-            document.getElementById("record").innerHTML = isTopScore;
-            document.getElementById("rank").innerHTML = rank;
-            document.getElementById("greeting").innerHTML = greeting;
-            document.getElementById("stars").innerHTML = stars;
-            document.getElementById("bonus").innerHTML = bonus;
-            document.getElementById("team").innerHTML = team;
-            document.getElementById("country").innerHTML = country;
+            document.getElementById("card1").innerHTML =
+                "<div class='card'><div class='planet-name'>" + p1.name + "</div>" +
 
-        }
-    </script>
-</body>
+
+                "<div class='planet-fact'>" + p1.describe() + "</div></div>";
+
+            document.getElementById("card2").innerHTML =
+
+                "<div class='card'><div class='planet-name'>" + p2.name + "</div>" +
+
+                "<div class='planet-fact'>" + p2.describe() + "</div></div>";
+
+            document.getElementById("card3").innerHTML =
+
+                "<div class='card'><div class='planet-name'>" + p3.name + "</div>" +
+
+                "<div class='planet-fact'>" + p3.describe() + "</div></div>";
+
+
+                   
+            }    
+
+
+
+            
+        </script>
+
+
+
+    </body>
 
 </html>
