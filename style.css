@@ -1,0 +1,77 @@
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background-image: url("eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg");
+
+    background-color: #252525;
+
+    background-repeat: no-repeat;
+
+    font-family: "Baloo Tamma 2", cursive;
+
+    margin: 0;
+
+    background-position: center;
+
+
+
+    background-attachment: fixed;
+
+
+
+    margin: 0;
+
+    height: 100vh;
+
+}
+
+
+
+.navigation {
+
+    background-color: #1b1b1b;
+
+}
+
+.navigation-link {
+
+    text-decoration: none;
+
+}
+
+.navigation-link:hover {
+
+    color: yellow !important;
+
+}
+
+
+
+.m-heading {
+
+    font-family: "Roboto Slab", serif;
+
+}
+
+
+
+.main-container {
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background-size: cover;
+
+
+
+    background-repeat: no-repeat;
+
+}
