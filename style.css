@@ -44,8 +44,8 @@ body {
 .operator {
     cursor: pointer;
 }
-.operator.active,
-.number.active {
+.operator:active,
+.number:active {
     font-size: 13px;
 }
 
@@ -72,15 +72,15 @@ body {
     text-align: right;
     height: 60px;
     margin: 10px 20px;
-    font-size: 30px
+    font-size: 30px;
 }
 
-button:nth-child(4) {
+button:nth-child(8) {
     font-size: 20px;
     background-color: #20b2aa;
 }
 
-button:nth-child(8) {
+button:nth-child(4) {
     font-size: 20px;
     background-color: #ffa500;
 }
