@@ -1,37 +1,23 @@
-classmates = ["Aarav", "Priya", "Rahul", "Sneha", "Dev"]
-print("Class list:", classmates)
+
+books = ["Alice in Wonderland", "Harry Potter and the gambler", "Geronimo Stilton", "Harry Potter"]
+
+print("Books:", len(books), books)
+print("First:", books[0], "| Last:", books[-1])               # (given) B
+
+shelves = ["C1", "H2", "M1", "W3"]
 
 
-print("Total students:", len(classmates))
-print("First student:", classmates[0])
-print("last student:", classmates[-1])
-print("First three:", classmates[:3])
-
-classmates.append("Meera")
-print("\nafter adding Meera:", classmates)
-classmates.remove("Dev")
-print("After removing Dev:", classmates)
-classmates.sort()
-print("Sorted Alpabetically:", classmates)
-classmates.reverse()
-print("Reversed:", classmates)
+shelf_of = {}
+print("Shelf map:", shelf_of)
 
 
-teacher = {"name": "Mr. Sharma", "subject": "Python", "experiance": 5}
-print("\nTeacher profile:", teacher)
+def where_is(book):
+    """Return the shelf code, or a message if the library does not have the book."""
+    
+    return "?" 
 
 
-print("Subject:", teacher["subject"])
-print("Experiance:", teacher.get("experiance", "Not found"))
-teacher["experiance"] = 6
-teacher["email"] = "sharma@school.com"
-teacher.pop("experiance")
-print("Updated teacher profile:", teacher)
+for title in ["Holes", "Dune"]:                                
+    print(title, "->", where_is(title))
 
-
-roll_numbers = [1,2,3,4,5]
-names = ["Aarav", "Priya", "Rahul", "Sneha", "Meera"]
-student_directory = dict(zip(roll_numbers, names))
-print("\mStudent Directory:", student_directory)
-print("Student at Roll 3:", student_directory[3])
-
+librarian = {"name": "Ms. Manioelaa", "desk": "Front"}            
