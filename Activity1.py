@@ -1,23 +1,36 @@
+pasta = ("Pasta Arrabiata", "Italian", 20, "Medium")
+burrito = ("Veg Burrito", "Mexican", 45, "Hard")
+all_recipes = (pasta,burrito)
+print("Recipe 1:", pasta)
 
-books = ["Alice in Wonderland", "Harry Potter and the gambler", "Geronimo Stilton", "Harry Potter"]
-
-print("Books:", len(books), books)
-print("First:", books[0], "| Last:", books[-1])               # (given) B
-
-shelves = ["C1", "H2", "M1", "W3"]
-
-
-shelf_of = {}
-print("Shelf map:", shelf_of)
+print("Name:", pasta[0], "| Level:", pasta[-1])
+print("Burrito time:", all_recipes[1][2])
+print("Cuisine and minutes:", pasta[1:3])
 
 
-def where_is(book):
-    """Return the shelf code, or a message if the library does not have the book."""
-    
-    return "?" 
+print("Pasta card:")
+for detail in pasta:
+    print(" -", detail)
 
 
-for title in ["Holes", "Dune"]:                                
-    print(title, "->", where_is(title))
+pasta_list = ["Tomato", "Garlic", "Olive Oil", "Chilli", "Pasta", "Garlic"]
+burrito_items = {"rice", "oregano", "garlic", "onion", "tomato", "spices"}
+pasta_items = set(pasta_list)
+print("Pasta items:", len(pasta_items), sorted(pasta_items))
 
-librarian = {"name": "Ms. Manioelaa", "desk": "Front"}            
+
+extra = input("Add one ingrediant to the pasta: ")
+pasta_items.add(extra)
+pasta_items.discard("chilli")
+pasta_items.discard("basil")
+print("Updated pasta items:", sorted(pasta_items))
+
+
+every_item = pasta_items.union(burrito_items)
+shared = pasta_items.intersection(burrito_items)
+only_pasta = pasta_items.difference(burrito_items)
+not_shared = pasta_items.symmetric_difference(burrito_items)
+print('Every item:', sorted(every_item))
+print("Shared:", sorted(shared))
+print("Only pasta:", sorted(only_pasta))
+print("Not Shared:", sorted(not_shared))
