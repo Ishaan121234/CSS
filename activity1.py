@@ -1,19 +1,18 @@
+class Student:
+    print("Python read the Student blueprint")
+    school = "Surprise school"
+    grade = 10
+    print("Class variable grade:", grade)
 
-card = ("Ishaan", 9, "A")
-
-
-print("Student: ?") 
-
-
-monday_list = ["Maths", "Science", "English", "Science", "Music"]
-tuesday_list = ["Maths", "History", "English", "Music", "Music"]
-
-
-monday = tuesday = set()  
-print("Monday:", len(monday), sorted(monday))
+anna = Student()
+ryan = Student()
+print("anna is a", type(anna))  
 
 
-print("Monday:", sorted(monday))
-print("Tuesday:", sorted(tuesday))
+print("anna's school:", anna.school, "| ryan's garde:", ryan.grade)
+new_grade = int(input("New class Grade?"))
+Student.grade = new_grade
+print("After changing the class grade: anna", anna.grade,"| ryan", ryan.grade)
 
-
+anna.grade = 12
+print("anna", anna.grade,"| ryan", ryan.grade, "| Student", Student.grade)
